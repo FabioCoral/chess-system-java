@@ -4,9 +4,7 @@ import chess.ChessMatch;
 import chess.ChessPiece;
 import chess.ChessPosition;
 import chess.exception.ChessException;
-import org.w3c.dom.ls.LSOutput;
 
-import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
