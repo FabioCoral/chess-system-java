@@ -41,7 +41,7 @@ public class UI {
     public static ChessPosition readChessPosition(Scanner sc){
         try{
             String s = sc.nextLine();
-            char column = s.charAt(0);
+            char column = s.toLowerCase().charAt(0);
             int row = Integer.parseInt(s.substring(1));
             return new ChessPosition(column, row);
         } catch (RuntimeException e) {
@@ -72,7 +72,8 @@ public class UI {
         System.out.println();
         System.out.println("Turn : " + chessMatch.getTurn());
         if(!chessMatch.isCheckMate()){
-            System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
+            String typeColor = (chessMatch.getCurrentPlayer() == Color.BLACK) ? ANSI_YELLOW : ANSI_WHITE;
+            System.out.println("Waiting player: " + typeColor + chessMatch.getCurrentPlayer() + ANSI_RESET);
             if(chessMatch.isCheck()){
                 System.out.println("CHECK !");
             }
